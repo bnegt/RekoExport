@@ -1,0 +1,30 @@
+  {
+    "name": "Export Facebook Comments",
+    "version": "0.1",
+	"options_page": "html/options.html",
+    "description": "Export facebook comments into a HTML table for easy copy and pasta into excel or whatnot!",
+    "background": {
+      "scripts": ["js/background.js"],
+      "persistent": false
+    },
+    "manifest_version": 2,
+	
+	"permissions": [
+		"activeTab",
+		"storage"
+    ],
+	
+    "browser_action": {
+      "default_title": "Popup"
+    },
+	
+	"content_scripts": [
+      {
+        "matches": ["http://www.facebook.com/*"],
+        "js": ["js/script.js"]          
+      }
+    ]
+	
+  }
+  
+  
