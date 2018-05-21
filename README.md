@@ -6,9 +6,10 @@ Installation av tillägg
 1. Ladda hem alla filer
 2. Placera filerna på den plats du önskar.
 3. Öppna chrome och skriv in adressen chrome://extensions
-4. Välj "Load Unpacked"
-5. Välj katalogen där du lade filerna
-6. en ikon borde nu finnas uppe i höger hörn. ett grått "E"
+4. Välj "developer mode" uppe till höger
+5. Välj "Load Unpacked"
+6. Välj katalogen där du lade filerna
+7. en ikon borde nu finnas uppe i höger hörn. ett grått "E"
 
 För att använda tillägget 
 1. Gå till det inlägg du vill exportera
