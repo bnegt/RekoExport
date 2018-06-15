@@ -15,13 +15,16 @@
     ],
 	
     "browser_action": {
-      "default_title": "Popup"
+      "default_title": "Popup",
+	  "default_popup": "html/localPage.html"
     },
 	
 	"content_scripts": [
       {
-        "matches": ["http://www.facebook.com/*"],
-        "js": ["js/script.js"]          
+        "matches": ["*://www.facebook.com/*"],
+        "js": ["js/addButtonsToFacebook.js"],
+		"run_at": "document_end",
+        "all_frames": true
       }
     ]
 	

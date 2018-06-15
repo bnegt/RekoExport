@@ -1,3 +1,5 @@
+
+ //chrome.storage.local.clear();
  /*
  chrome.storage.local.get(['myKey', 'val'], function(items) {
       console.log('Settings retrieved', items);
@@ -21,21 +23,75 @@ chrome.storage.local.get(['Foo0'], function(result) {
 });
 */
 
-chrome.storage.local.get(null, function(items) {
-   for (key in items) {
-	//console.log(items[key][0]);
-	   if(items[key][0] == "Bengt Torstensson") {
-			console.log("My own comment");
-	   } else {
-			console.log("Namn: " + items[key][0]);
-			console.log("Kommentar" + items[key][2]);
-			var table = document.getElementById("rekotable");
-			var row = table.insertRow(0);
-			var cell1 = row.insertCell(0);
-			var cell2 = row.insertCell(1);
-			cell1.innerHTML = items[key][0];
-			cell2.innerHTML = items[key][2];
+function reverseObject(object) {
+    var newObject = {};
+    var keys = [];
+    for (var key in object) {
+		keys.push(key);
+    }
+    for (var i = keys.length - 1; i >= 0; i--) {
 
+    var value = object[keys[i]];
+      newObject[keys[i]]= value;
+    }       
+
+    return newObject;
+}
+
+
+chrome.storage.local.get(null, function(items) {
+	var table = document.getElementById("rekotable");
+   var rowId = "0";
+   //items = reverseObject(items);
+   for (key in items) {
+	   if(!key.search("Foo")) {
+		   console.log(key);
+		
+		//console.log(newItems);
+		
+
+		//console.log(items[key][0]);
+		   if(items[key][0] != items["yourName"]) {
+
+				console.log("Namn: " + items[key][0]);
+				console.log("Kommentar" + items[key][2]);
+				table = document.getElementById("rekotable");
+				//console.log(table);
+				var row = table.insertRow(0);
+				row.id = rowId;
+				var cell1 = row.insertCell(0);
+				
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				cell1.innerHTML = items[key][0];
+				cell1.id = "name";
+				cell2.innerHTML = items[key][2];
+				cell2.id = "comment";
+				//console.log(items[key][2].substring(items[key][2].search("SKÖ"),items[key][2].search("SKÖ")+5));
+				cell3.innerHTML = "ORDER ID";
+				cell3.id = "orderId"
+				cell4.innerHTML = '<button id="removeRowButton" data-id="'+key+'">Remove this row</button>';
+				cell4.id = "button";
+				var rowCount = document.querySelectorAll("#removeRowButton");
+				for (var i=0; i<rowCount.length; i++) {
+					rowCount[i].onclick = function() {
+						deleteRow(this);
+					}
+				}
+				
+
+		   } else {
+				console.log(table.rows.length);
+				if(table.rows.length > 0) {
+					if(items[key][2].substring(items[key][2].search("SKA"))) {
+						cell3.innerHTML = items[key][2].substring(items[key][2].search("SKA"),items[key][2].search("SKA")+6);
+						
+					}
+				}
+
+		   }
+		   rowId++;
 	   }
    }
    
@@ -84,6 +140,12 @@ chrome.storage.local.clear(function() {
 });
 
 */
+function removeAllData() {
+	//alert("Data!");
+	chrome.storage.local.clear();
+	window.location.reload();
+}
+
 
 
 

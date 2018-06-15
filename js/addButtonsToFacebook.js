@@ -40,6 +40,7 @@ for(var  i=0,max=allDocuments.length;i < max; i++) {
 		});
 	}
     this.parentElement.removeChild(this);
+	chrome.browserAction.setPopup({popup: "new.html"});
   };
   var buttonText = document.createTextNode("Export comments in this thread");
   document.getElementsByClassName("UFIList")[i].append(button);

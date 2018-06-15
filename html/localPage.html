@@ -2,22 +2,28 @@
   <html>
     <head>
       <style>
-        button {
-          height: 30px;
-          width: 30px;
-          outline: none;
-        }
+	  body {
+    min-width:700px;
+}
+
       </style>
     </head>
     <body>
-      Hej data<br><br><br><br>Kaka<br><br><br>Kaka
-	  Local data:
+	<button type="button" id="removeAllData">Remove all data</button><button id="addbutton">Add button to facebook</button>
 
-	  <div id="data">
+	<!-- 
+	<BUTTON onclick="chrome.storage.local.clear()">Something something darkside</BUTTON>
+	-->
+
+	  <div id="IDdata">
+		<table id="rekotable" border="1">
+		</table>
 	  </div>
-		 <a href='#' onclick='downloadCSV({ filename: "stock-data.csv" });'>Download CSV</a>
+		 
     </body>
   </html>
   
-<script type="text/javascript" src="ReadLocalStorage.js"></script>
+<script type="text/javascript" src="../js/ReadLocalStorage.js"></script>
+<script type="text/javascript" src="../js/popup.js"></script>
+<script type="text/javascript" src="../js/buttons.js"></script>
 
