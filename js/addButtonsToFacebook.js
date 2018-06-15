@@ -4,21 +4,12 @@ var allDocuments = document.getElementsByClassName("UFIList");
 for(var  i=0,max=allDocuments.length;i < max; i++) {
   var button = document.createElement("button");
   button.onclick = function() {
-    //console.log(this.parentElement);
+
 	UFIData = this.parentElement;
-	//console.log(this.parentElement);
 	var foobar = this.parentElement.childNodes;
-	//console.log(foobar[2].getElementsByClassName("UFIComment"));
-	
-	//var comments = this.parentElement.getElementsByClassName("UFICommentContentBlock");
+
 	var comments = this.parentElement.getElementsByClassName("UFICommentContent");
 	
-	//var arr = [].slice.call(foobar[2]);
-	//console.log(arr[1]);
-	
-	//storeUserPrefs(foobar[2].innerText);
-	//storeUserPrefs(comments[2].getElementsByClassName("UFICommentBody")[0].innerText);
-	//storeUserPrefs(comments[2]);
 	console.log(comments.length);
 	
 	
