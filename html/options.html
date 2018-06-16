@@ -11,14 +11,15 @@
     <body>
 	  <div id="settings">
 	  Här har vi options:<br>
-	  (i) Ditt namn: <input id="yourName" type=text value="Namn"></input><br>
-	  (i) Lista med löpnummer: <input id="prefix" type=text value="SKA,SKO,MAR,LID"></input><br><br>
+	  (i) Ditt namn: <input id="yourName" type=text value="Name"></input><br>(Det namn som sorteras ut ifrån listorna)<br> 
+	  <br>
+	  (i) Lista med löpnummer: <input id="prefix" type=text value="Order Prefix"></input><br>Jag användere SKAXXX som löpnummer på mina kvitton för skara LIDXXX för Lidköping. Däravskriver jag in LID,SKA (Separerade med komma, inget mellanslag)<br>
 	  <button id="save">Spara</button><button>Återställ</button>
 	</div>
 	  <div id="status"></div>
 	  
 	  <br><br><br>
-	<button type="button" id="removeAllData">Remove all data</button>
+	<button type="button" id="removeAllData">Remove all data</button> (Fungerar inte, använd den i popup-rutan)
 	<!-- 
 	<BUTTON onclick="chrome.storage.local.clear()">Something something darkside</BUTTON>
 	-->

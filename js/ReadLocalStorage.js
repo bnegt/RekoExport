@@ -82,13 +82,27 @@ chrome.storage.local.get(null, function(items) {
 				
 
 		   } else {
-				console.log(table.rows.length);
-				if(table.rows.length > 0) {
-					if(items[key][2].substring(items[key][2].search("SKA"))) {
-						cell3.innerHTML = items[key][2].substring(items[key][2].search("SKA"),items[key][2].search("SKA")+6);
+				//console.log(table.rows.length);
+				var searchPrefix = items["prefix"].split(",");
+				searchPrefix.forEach(function(element) {
+					var searchString = items[key][2].substring(items[key][2].search(element));
+					searchString  = searchString.substring(0,searchString.search(" "));
+					//console.log(searchString+" - "+element);
+					
+					if(table.rows.length > 0) {
+						if(searchString.search(element) > -1) {
+
+							cell3.innerHTML = items[key][2].substring(items[key][2].search("SKA"),items[key][2].search("SKA")+6);
+						}
 						
+						//if(items[key][2].substring(items[key][2].search(element))) {
+							
+							//cell3.innerHTML = items[key][2].substring(items[key][2].search("SKA"),items[key][2].search("SKA")+6);
+							
+						//}
 					}
-				}
+
+				});
 
 		   }
 		   rowId++;

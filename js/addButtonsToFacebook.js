@@ -39,10 +39,6 @@ for(var  i=0,max=allDocuments.length;i < max; i++) {
 }
 
 function storeUserPrefs(UFIData) {
-    //var key='myKey', testPrefs = {'val': UFIData};
-    //chrome.storage.local.set({[key]: testPrefs}, function() {
-    //  console.log('Saved', key, testPrefs);
-    //});
 	
 	chrome.storage.local.set({'myKey': UFIData}, function() {
 		console.log('Value is set to ' + UFIData);
